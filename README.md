@@ -1,2 +1,2 @@
-# Todo-List
-A ToDo webapp built with JS. 
+# ToDo List
+A JavaScript ToDo list
