@@ -1,5 +1,6 @@
 import "./styles.css";
 import toDoItem from "./Todo";
+import displayFolders from "./foldersDom";
 
 let folders = {
     "main": []
@@ -10,7 +11,6 @@ let data = []
 
 const addToDoItem = function(folder, title, details, dueDate, priority) {
     const note = new toDoItem(title, details, dueDate, priority);
-    // note.id = randomNum();
 folders[folder].push(note);
 };
 
@@ -33,17 +33,16 @@ const deleteFolder = function(folderName){
     delete folders[folderName];
 }
 
-// const randomNum = function() {
-//     return Math.floor(Math.random() * 1000000);
-// }
 
 addNewFolder("Gym");
 addNewFolder("Job Hunt")
 addToDoItem("Gym","Chest", "Do some Bench", "Friday","High")
 addToDoItem("main", "Buy milk", "Go to store and buy milk", "today", "high");
-addToDoItem("Job HUnt","Review CV", "Update CV with skills", "Friday", "high");
+addToDoItem("Job Hunt","Review CV", "Update CV with skills", "Friday", "high");
 
-console.log(folders)
+
+console.log(folders);
+displayFolders(folders);
 
 
 
