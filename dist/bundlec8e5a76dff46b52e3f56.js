@@ -116,7 +116,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n\n\n\nconsole.log(\"hi\");\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n\n\nlet folders = {\n    \"data\": [],\n    \"Odin Stuff\": []\n  }\n\n\n\nlet data = []\n\n\nclass Note {\n\tconstructor (title, content, id) {\n  \tthis.title = title;\n    this.content = content;\n    this.id = id;\n  }\n}\n\nconst newFolder = function(folderName) {\n    return folders[folderName] = [];\n    }\n     \nconst deleteFolder = function (index) {\n        return folders.splice(index,1)\n    }\n\n\nnewFolder(\"newOne\");\n\n// deleteFolder(2);\n\n\n\n\n\naddNote(\"data\",\"test\", \"do it\", 1);\naddNote(\"Odin Stuff\",\"test2\", \"Let's go\", 2);\n\nconsole.log(folders);\n\n\n\n\nlocalStorage.setItem(\"folders\", JSON.stringify(folders));\n\n\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
 
 /***/ })
 
