@@ -1,6 +1,7 @@
 import "./styles.css";
 import toDoItem from "./Todo";
 import displayFolders from "./foldersDom";
+import displayTodoList from "./itemsListDom";
 
 let folders = {
     "main": []
@@ -46,13 +47,14 @@ addNewFolder("Job Hunt")
 addToDoItem("Gym","Chest", "Do some Bench", "Friday","High")
 addToDoItem("main", "Buy milk", "Go to store and buy milk", "today", "high");
 addToDoItem("Job Hunt","Review CV", "Update CV with skills", "Friday", "high");
+addToDoItem("Job Hunt","Call Saul", "Tell him all", "Yesterday", "high");
 
 
 displayFolders(folders);
 
 
 const folderList = document.querySelectorAll(".folders");
-folderList.forEach(folder => folder.addEventListener("click", (el) => console.log(el.target.textContent)));
+folderList.forEach(folder => folder.addEventListener("click", (el) => displayTodoList(folders[el.target.textContent])));
 
 
 
