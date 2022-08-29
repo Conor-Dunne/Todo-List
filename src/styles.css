@@ -34,7 +34,8 @@ p {
     grid-template-areas: 
     "header header header header header"
     "sidebar main main main main";
-    grid-template-columns: max-content repeat(4, 1fr) max-content;
+    grid-template-columns: max-content 1fr;
+    /* grid-template-columns: max-content repeat(5, 1fr) max-content; */
     grid-template-rows: auto 1fr;
 }
 
@@ -47,7 +48,7 @@ header {
 .sidebar {
     grid-area: sidebar;
     background-color: aqua;
-    width: 200px;
+    padding: 10px 30px;
 }
 
 .main {
@@ -59,4 +60,8 @@ footer {
     grid-area: footer;
     background-color: aqua;
     height: 50px;
+}
+
+.folders {
+    color: red;
 }
