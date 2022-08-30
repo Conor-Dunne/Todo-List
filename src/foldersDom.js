@@ -4,9 +4,12 @@
 
 export default function displayFolders(obj) {
 
-    const sidebar = document.querySelector(".sidebar");
+    const list = document.querySelector(".folders-list");
     const ul = document.createElement("ul");
-    
+    ul.classList.add("click-item");
+
+    removeAllChildNodes(list);
+
 
      for (const property in obj) {
         const li = document.createElement("li");
@@ -15,10 +18,16 @@ export default function displayFolders(obj) {
         ul.append(li);
     }
 
-    sidebar.appendChild(ul);
+    
+
+    list.appendChild(ul);
 
  
 };
 
 
-   
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}

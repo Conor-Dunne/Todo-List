@@ -2,6 +2,7 @@ import "./styles.css";
 import toDoItem from "./Todo";
 import displayFolders from "./foldersDom";
 import displayTodoList from "./itemsListDom";
+import {closeModule, showNewFoldermodule,newFolderName} from "./controls";
 
 let folders = {
     "main": []
@@ -24,9 +25,13 @@ const deleteNote = function (index) {
 data.splice(index,1);
 }
 
-
-const addNewFolder = function(folderName) {
-return folders[folderName] = [];
+const addNewFolder = function() {
+    const folderName = document.querySelector("#new-folder").value;
+    console.log(folderName);
+    folders[folderName] = [];
+    localStorage.setItem("folders", JSON.stringify(folders));
+    displayFolders(folders);
+    closeModule();
 }
 
 
@@ -42,21 +47,31 @@ const deleteFolder = function(folderName){
 // folderList.forEach(addEventListener("click", ()=> console.log("hi")));
 
 
-addNewFolder("Gym");
-addNewFolder("Job Hunt")
-addToDoItem("Gym","Chest", "Do some Bench", "Friday","High")
-addToDoItem("main", "Buy milk", "Go to store and buy milk", "today", "high");
-addToDoItem("Job Hunt","Review CV", "Update CV with skills", "Friday", "high");
-addToDoItem("Job Hunt","Call Saul", "Tell him all", "Yesterday", "high");
+// addNewFolder("Gym");
+// addNewFolder("Job Hunt")
+// addToDoItem("Gym","Chest", "Do some Bench", "Friday","High")
+// addToDoItem("main", "Buy milk", "Go to store and buy milk", "today", "high");
+// addToDoItem("Job Hunt","Review CV", "Update CV with skills", "Friday", "high");
+// addToDoItem("Job Hunt","Call Saul", "Tell him all", "Yesterday", "high");
 
 
 displayFolders(folders);
 
 
+// EVENT LISTENERSS
+
 const folderList = document.querySelectorAll(".folders");
 folderList.forEach(folder => folder.addEventListener("click", (el) => displayTodoList(folders[el.target.textContent])));
 
 
+const newFolderBtn = document.querySelector("#add-folder");
+const cancelBtn = document.querySelector(".close-module");
+
+newFolderBtn.addEventListener("click", showNewFoldermodule);
+cancelBtn.addEventListener("click", closeModule);
+
+const submitNewFolderBtn = document.querySelector("#add-folder-btn");
+submitNewFolderBtn.addEventListener("click", addNewFolder);
 
 
 

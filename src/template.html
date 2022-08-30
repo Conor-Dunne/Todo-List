@@ -9,8 +9,30 @@
 <body>
     <div class="container">
         <header>I am header</header>
-        <div class="sidebar">Folders</div>
-        <div class="main">items list</div>
+        <div class="sidebar">
+            <button type="button" id="add-folder">
+                + New folder
+            </button>
+            <h1>Folders</h1>
+            <div class="folders-list"></div>
+        </div>
+        <div class="main">
+            <button type="button" id="add-folder">
+                + New item
+            </button>
+            <h1>ToDo list:</h1>
+            <div class="list-content"></div>
+        </div>
+    </div>
+    <div class="hide-content" id="add-folder-module">
+        <form action="#" class="user-input">
+            <label for="new-folder">Folder Name: </label>
+            <input type="text" id="new-folder" name="folder-name" placeholder="Enter new folder name...">
+            <div class="form-controls">
+                <button type="reset" class="close-module">Cancel</button>
+                <button type="button" id="add-folder-btn">OK</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>

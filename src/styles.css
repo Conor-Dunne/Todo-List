@@ -54,6 +54,7 @@ header {
 .main {
     grid-area: main;
     background-color: yellow;
+    padding: 10px 30px;
 }
 
 footer {
@@ -63,5 +64,51 @@ footer {
 }
 
 .folders {
-    color: red;
+    color: rgb(255, 0, 212);
+}
+
+button {
+    margin: 10px 0;;
+}
+
+.click-item:hover,
+button {
+    cursor: pointer;
+}
+
+.hide-content {
+    display: none;
+  }
+
+  .show-content {
+    display: block;
+  }
+
+  .module {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%;
+    background-color: #000000c9;
+    font-size: 3rem;
+}
+
+.user-input {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: aliceblue;
+    opacity: 100%;
+    height: 20vh;
+    width: 80%;
 }

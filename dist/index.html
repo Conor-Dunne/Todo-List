@@ -5,12 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List</title>
-<script defer src="bundled2cfeb1b13e532784596.js"></script></head>
+<script defer src="bundlec53961d403aab382c665.js"></script></head>
 <body>
     <div class="container">
         <header>I am header</header>
-        <div class="sidebar">Folders</div>
-        <div class="main">items list</div>
+        <div class="sidebar">
+            <button type="button" id="add-folder">
+                + New folder
+            </button>
+            <h1>Folders</h1>
+        </div>
+        <div class="main">
+            <button type="button" id="add-folder">
+                + New item
+            </button>
+            <h1>ToDo list:</h1>
+            <div class="list-content"></div>
+        </div>
+    </div>
+    <div class="module" id="new-folder">
+        <form action="#" class="user-input">
+            <input type="text">
+        </form>
     </div>
 </body>
 </html>
