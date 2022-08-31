@@ -3,6 +3,8 @@ import toDoItem from "./Todo";
 import displayFolders from "./foldersDom";
 import displayTodoList from "./itemsListDom";
 import {closeModule, showNewFoldermodule,newFolderName} from "./controls";
+import {hitEnterToSubmit, noEmptyInput} from "./helperFunctions";
+
 
 let folders = {
     "main": []
@@ -27,7 +29,10 @@ data.splice(index,1);
 
 const addNewFolder = function() {
     const folderName = document.querySelector("#new-folder").value;
-    console.log(folderName);
+    if (folderName == "") {
+        alert("Enter folder name");
+        return;
+    }
     folders[folderName] = [];
     localStorage.setItem("folders", JSON.stringify(folders));
     displayFolders(folders);
@@ -73,7 +78,8 @@ cancelBtn.addEventListener("click", closeModule);
 const submitNewFolderBtn = document.querySelector("#add-folder-btn");
 submitNewFolderBtn.addEventListener("click", addNewFolder);
 
-
+const addFolderInput = document.querySelector("#new-folder");
+addFolderInput.addEventListener("keypress", hitEnterToSubmit )
 
 
 

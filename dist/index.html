@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List</title>
-<script defer src="bundlec53961d403aab382c665.js"></script></head>
+<script defer src="bundlef1aced780698327eeb70.js"></script></head>
 <body>
     <div class="container">
         <header>I am header</header>
@@ -14,6 +14,7 @@
                 + New folder
             </button>
             <h1>Folders</h1>
+            <div class="folders-list"></div>
         </div>
         <div class="main">
             <button type="button" id="add-folder">
@@ -23,9 +24,14 @@
             <div class="list-content"></div>
         </div>
     </div>
-    <div class="module" id="new-folder">
+    <div class="hide-content" id="add-folder-module">
         <form action="#" class="user-input">
-            <input type="text">
+            <label for="new-folder">Folder Name: </label>
+            <input type="text" id="new-folder" name="folder-name" placeholder="Enter new folder name...">
+            <div class="form-controls">
+                <button type="reset" class="close-module">Cancel</button>
+                <button type="button" id="add-folder-btn">OK</button>
+            </div>
         </form>
     </div>
 </body>
