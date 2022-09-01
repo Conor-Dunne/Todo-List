@@ -10,13 +10,6 @@ export default class toDoItem {
     this. id = Math.floor(Math.random()* 1000000)
   }
 
-  // getID() {
-  // }
-
-  //getDaysLeft
-
-  //getFolder
-
 }
 
 
