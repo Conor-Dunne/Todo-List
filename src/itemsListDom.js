@@ -1,6 +1,11 @@
 
 function displayTodoList(folder) {
+    console.log();
     const list = document.querySelector(".list-content");
+    if (folder.length < 1) {
+        list.textContent = `${getKeyByValue(folders, folder)} is empty! Try adding some items.`
+        return;
+    }
     const ul = document.createElement("ul");
     ul.classList.add("click-item");
     const li = document.createElement("li");
@@ -16,7 +21,7 @@ function displayTodoList(folder) {
     })
 
         list.appendChild(ul);
-
+        
 }
 
 
@@ -25,5 +30,10 @@ function removeAllChildNodes(parent) {
         parent.removeChild(parent.firstChild);
     }
 }
+
+
+function getKeyByValue(object, value) {
+    return Object.keys(object).find(key => object[key] === value);
+  }
 
 export default displayTodoList;
