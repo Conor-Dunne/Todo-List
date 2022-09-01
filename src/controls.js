@@ -15,7 +15,7 @@ export function showNewFolderModal() {
 export function closeModal() {
     addFolderModule.classList.remove("module");
     addFolderModule.classList.add("hide-content");
-   
+
 }
 
 export function newFolderName() {
@@ -24,21 +24,21 @@ export function newFolderName() {
 }
 
 
-export function addToDoItem (folder, title, details, dueDate, priority) {
+export function addToDoItem(folder, title, details, dueDate, priority) {
     const note = new toDoItem(title, details, dueDate, priority);
     folders[folder].push(note);
 };
 
-export function editNote (id, newContent) {
+export function editNote(id, newContent) {
     let note = data.find(note => note.id == id);
     note.content = newContent;
 }
 
-export function deleteNote (index) {
+export function deleteNote(index) {
     data.splice(index, 1);
 }
 
-export function addNewFolder () {
+export function addNewFolder() {
     const folderName = document.querySelector("#new-folder").value;
     if (folderName == "") {
         alert("Enter folder name");

@@ -1,7 +1,7 @@
 import "./styles.css";
 import displayFolders from "./foldersDom";
 import displayTodoList from "./itemsListDom";
-import {addToDoItem,editNote,deleteNote,addNewFolder,deleteFolder, showNewFolderModal, closeModal} from "./controls";
+import { addToDoItem, editNote, deleteNote, addNewFolder, deleteFolder, showNewFolderModal, closeModal } from "./controls";
 import { hitEnterToSubmit, addGlobalEventListener } from "./helperFunctions";
 
 
@@ -27,7 +27,7 @@ displayFolders(folders);
 
 
 // Display folder list dynamically
-addGlobalEventListener("click", ".folders", (el) => displayTodoList(folders[el.target.textContent])  )
+addGlobalEventListener("click", ".folders", (el) => displayTodoList(folders[el.target.textContent]))
 
 //Open module form for adding new folder
 const newFolderBtn = document.querySelector("#add-folder");
