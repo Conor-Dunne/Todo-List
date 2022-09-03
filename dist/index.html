@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List</title>
-<script defer src="bundle34851b14d2197dd500f3.js"></script></head>
+<script defer src="bundle9bd7d767d358da852d00.js"></script></head>
 <body>
     <div class="container">
         <header>I am header</header>
@@ -32,6 +32,27 @@
             <div class="form-controls">
                 <button type="reset" class="close-module">Cancel</button>
                 <button type="button" id="add-folder-btn">OK</button>
+            </div>
+        </form>
+    </div>
+    <div class="hide-content" id="add-item-module">
+        <form action="#" class="user-input">
+            <h1>Add new ToDo item:</h1>
+            <label for="new-item-title">Title: </label>
+            <input type="text" id="new-item-title" name="title" placeholder="What do need to do?">
+            <label for="new-item-details">Details: </label>
+            <input type="text" id="new-item-details" name="details" placeholder="Any details?">
+            <label for="new-item-due-date">Due date: </label>
+            <input type="date" id="new-item-due-date" name="Due date">
+            <label for="new-item-priority">Priority: </label>
+            <select id="new-item-due-date" name="Due date">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <div class="form-controls">
+                <button type="reset" class="close-module">Cancel</button>
+                <button type="button" id="add-item-btn">OK</button>
             </div>
         </form>
     </div>
