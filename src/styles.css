@@ -23,28 +23,24 @@ h1 {
 }
 
 p {
-    margin-top: 15px;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 400;
-    line-height: 1.5;
 }
 
 .container {
-    min-height: 100vh;
     font-size: 2rem;
     display: grid;
     grid-template-areas:
-        "header header header header header"
-        "sidebar main main main main";
+        "header header"
+        "sidebar main";
     grid-template-columns: max-content 1fr;
-    /* grid-template-columns: max-content repeat(5, 1fr) max-content; */
     grid-template-rows: auto 1fr;
+    
 }
 
 header {
     grid-area: header;
     background-color: aquamarine;
-    height: 50px;
 }
 
 .sidebar {
@@ -59,11 +55,6 @@ header {
     padding: 10px 30px;
 }
 
-footer {
-    grid-area: footer;
-    background-color: aqua;
-    height: 50px;
-}
 
 .folders {
     color: rgb(255, 0, 212);
@@ -98,7 +89,6 @@ button {
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
     background-color: #000000c9;
     font-size: 3rem;
@@ -117,19 +107,18 @@ button {
     width: 80%;
 }
 
-.list-content {
-    max-width: 1000px;
-}
+
 
 .list-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
+    font-size: 1.4rem;
 }   
 
 .left-col,
-.righ-col {
+.right-col {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -144,10 +133,6 @@ button {
 
 .title {
     font-weight: 800;
+    width: 150px;
 }
 
-.description {
-    font-weight: 100;
-    font-size: 1.5rem;
-    margin-left: 60px;
-}

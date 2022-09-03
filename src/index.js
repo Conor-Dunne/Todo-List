@@ -17,7 +17,10 @@ let data = []
 
 
 addToDoItem("main", "Buy milk", "Go to store and buy milk", "today", "high");
-addToDoItem("main", "Get milk", "Go to store and buy milk", "today", "high");
+addToDoItem("main", "Get milk in the shop to make pancakes", "Go to store and buy milk", "today", "high");
+addToDoItem("main", "Buy bread", "Go to store and buy milk", "today", "high");
+addToDoItem("main", "Buy cheese", "Go to store and buy milk", "today", "high");
+addToDoItem("main", "Buy butter", "Go to store and buy milk", "today", "high");
 
 
 displayFolders(folders);
