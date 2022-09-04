@@ -1,7 +1,7 @@
 import { createDomElements } from "./helperFunctions";
 import { removeAllChildNodes, getKeyByValue } from "./helperFunctions";
 
-export let currentFolder = "main";
+export let currentFolder = "Main";
 
 function displayTodoList(folder) {
     currentFolder = getKeyByValue(folders, folder);

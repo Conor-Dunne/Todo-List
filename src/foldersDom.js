@@ -21,7 +21,6 @@ export default function displayFolders(obj) {
     
 
     list.appendChild(ul);
-    console.log("hi");
  
 };
 

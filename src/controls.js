@@ -36,20 +36,15 @@ export function newFolderName() {
     return name;
 }
 
-
-export function addToDoItem(folder, title, details, dueDate, priority) {
-    const note = new toDoItem(title, details, dueDate, priority);
-    folders[folder].push(note);
-};
-
 export function addToDoItemFromUserInput () {
-    const folderToUse = "main";
+    // const folderToUse = "main";
     const newTitle = document.querySelector("#new-item-title").value;
+    if (newTitle == "") {return};
     const newDetails = document.querySelector("#new-item-details").value;
     const newDueDate = document.querySelector("#new-item-due-date").value;
     const priorityToUse = document.querySelector("#new-item-priority").value;
     const newItem = new toDoItem(newTitle, newDetails, newDueDate, priorityToUse );
-    console.log(currentFolder);
+    
     folders[currentFolder].push(newItem);
     localStorage.setItem("folders", JSON.stringify(folders));
     displayTodoList(folders[currentFolder]);
@@ -62,16 +57,13 @@ export function editNote(id, newContent) {
     note.content = newContent;
 }
 
-export function deleteNote(index) {
-    data.splice(index, 1);
+export function deleteNote(folder, index) {
+    folders[folder].splice(index, 1);
 }
 
 export function addNewFolder() {
     const folderName = document.querySelector("#new-folder").value;
-    if (folderName == "") {
-        alert("Enter folder name");
-        return;
-    }
+    if (folderName == "") {return;};
     folders[folderName] = [];
     localStorage.setItem("folders", JSON.stringify(folders));
     displayFolders(folders);
