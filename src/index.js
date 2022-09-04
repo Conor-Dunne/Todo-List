@@ -20,7 +20,7 @@ if (Object.keys(folders).length === 0) {
 displayFolders(folders);
 displayTodoList(folders["Main"]);
 
-deleteNote("Main", 1);
+
 
 // addToDoItem("main", "Buy milk", "Go to store and buy milk", "today", "high");
 // addToDoItem("main", "Get milk in the shop to make pancakes", "Go to store and buy milk", "today", "high");
@@ -36,6 +36,9 @@ deleteNote("Main", 1);
 
 // Display folder list dynamically
 addGlobalEventListener("click", ".folders", (el) => displayTodoList(folders[el.target.textContent]))
+
+addGlobalEventListener("click", ".delete", (e) => deleteNote(e.target.dataset.id));
+
 
 //Open form for adding new folder
 const newFolderBtn = document.querySelector("#add-folder");

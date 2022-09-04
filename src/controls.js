@@ -57,9 +57,14 @@ export function editNote(id, newContent) {
     note.content = newContent;
 }
 
-export function deleteNote(folder, index) {
-    folders[folder].splice(index, 1);
-}
+export function deleteNote(id) {
+    let index = folders[currentFolder].findIndex(obj => obj.id == id);
+    console.log(index);
+    folders[currentFolder].splice(index, 1);
+    localStorage.setItem("folders", JSON.stringify(folders));
+    displayTodoList(folders[currentFolder]);
+
+};
 
 export function addNewFolder() {
     const folderName = document.querySelector("#new-folder").value;
