@@ -1,7 +1,10 @@
 import { createDomElements } from "./helperFunctions";
 import { removeAllChildNodes, getKeyByValue } from "./helperFunctions";
 
+export let currentFolder = "main";
+
 function displayTodoList(folder) {
+    currentFolder = getKeyByValue(folders, folder);
     const list = document.querySelector(".list-content");
     if (folder.length < 1) {
         list.textContent = `${getKeyByValue(folders, folder)} is empty! Try adding some items.`
@@ -25,7 +28,7 @@ function displayTodoList(folder) {
 
         const rightCol = createDomElements("div", "right-col", "");
         const viewBtn = createDomElements("button", "view-btn", "View");
-        const date = createDomElements("div", "date", "10/9/2022");
+        const date = createDomElements("div", "date", obj.dueDate);
         const editBtn = createDomElements("button", "edit", "Edit");
         const deleteBtn = createDomElements("button", "delete", "Delete");
         rightCol.append(viewBtn, date, editBtn, deleteBtn);

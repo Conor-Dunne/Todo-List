@@ -1,9 +1,12 @@
 
 import toDoItem from "./Todo";
 import displayFolders from "./foldersDom";
+import displayTodoList from "./itemsListDom";
+import { currentFolder } from "./itemsListDom";
 
 
 const addFolderModule = document.querySelector("#add-folder-module");
+const addItemModal = document.querySelector("#add-item-module")
 
 export function showNewFolderModal() {
     addFolderModule.classList.remove("hide-content");
@@ -11,11 +14,21 @@ export function showNewFolderModal() {
 
 }
 
+export function showNewItemModal() {
+    addItemModal.classList.remove("hide-content");
+    addItemModal.classList.add("module");
+}
+
 
 export function closeModal() {
     addFolderModule.classList.remove("module");
     addFolderModule.classList.add("hide-content");
 
+}
+
+export function closeNewItemModule() {
+    addItemModal.classList.remove("module");
+    addItemModal.classList.add("hide-content");
 }
 
 export function newFolderName() {
@@ -28,6 +41,21 @@ export function addToDoItem(folder, title, details, dueDate, priority) {
     const note = new toDoItem(title, details, dueDate, priority);
     folders[folder].push(note);
 };
+
+export function addToDoItemFromUserInput () {
+    const folderToUse = "main";
+    const newTitle = document.querySelector("#new-item-title").value;
+    const newDetails = document.querySelector("#new-item-details").value;
+    const newDueDate = document.querySelector("#new-item-due-date").value;
+    const priorityToUse = document.querySelector("#new-item-priority").value;
+    const newItem = new toDoItem(newTitle, newDetails, newDueDate, priorityToUse );
+    console.log(currentFolder);
+    folders[currentFolder].push(newItem);
+    localStorage.setItem("folders", JSON.stringify(folders));
+    displayTodoList(folders[currentFolder]);
+    closeNewItemModule();
+
+}
 
 export function editNote(id, newContent) {
     let note = data.find(note => note.id == id);

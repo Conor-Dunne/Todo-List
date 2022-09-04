@@ -1,7 +1,7 @@
 import "./styles.css";
 import displayFolders from "./foldersDom";
 import displayTodoList from "./itemsListDom";
-import { addToDoItem, editNote, deleteNote, addNewFolder, deleteFolder, showNewFolderModal, closeModal } from "./controls";
+import { addToDoItem, editNote, deleteNote, addNewFolder, deleteFolder, showNewFolderModal, closeModal, showNewItemModal,closeNewItemModule, addToDoItemFromUserInput } from "./controls";
 import { hitEnterToSubmit, addGlobalEventListener } from "./helperFunctions";
 
 
@@ -32,17 +32,30 @@ displayFolders(folders);
 // Display folder list dynamically
 addGlobalEventListener("click", ".folders", (el) => displayTodoList(folders[el.target.textContent]))
 
-//Open module form for adding new folder
+//Open form for adding new folder
 const newFolderBtn = document.querySelector("#add-folder");
 newFolderBtn.addEventListener("click", showNewFolderModal);
+
+//Open new ToDo item form
+const addNewItemBtn = document.querySelector("#add-item");
+addNewItemBtn.addEventListener("click", showNewItemModal);
 
 //Close module form for adding new folder
 const cancelBtn = document.querySelector(".close-module");
 cancelBtn.addEventListener("click", closeModal);
 
+//CLose module form for adding new item
+const cancelNewItemBtn = document.querySelector("#close-new-item-form")
+cancelNewItemBtn.addEventListener("click", closeNewItemModule);
+
 //Add new folder
 const submitNewFolderBtn = document.querySelector("#add-folder-btn");
 submitNewFolderBtn.addEventListener("click", addNewFolder);
+
+//Add new item
+const submitNewItem = document.querySelector("#add-item-btn");
+submitNewItem.addEventListener("click", addToDoItemFromUserInput )
+
 
 //Press enter to submit new folder
 const addFolderInput = document.querySelector("#new-folder");

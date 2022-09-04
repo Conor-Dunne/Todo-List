@@ -17,7 +17,7 @@
             <div class="folders-list"></div>
         </div>
         <div class="main">
-            <button type="button" id="add-folder">
+            <button type="button" id="add-item">
                 + New item
             </button>
             <h1>ToDo list:</h1>
@@ -45,13 +45,13 @@
             <label for="new-item-due-date">Due date: </label>
             <input type="date" id="new-item-due-date" name="Due date">
             <label for="new-item-priority">Priority: </label>
-            <select id="new-item-due-date" name="Due date">
-                <option value="High">High</option>
-                <option value="Medium">Medium</option>
-                <option value="Low">Low</option>
+            <select id="new-item-priority" name="priority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
             </select>
             <div class="form-controls">
-                <button type="reset" class="close-module">Cancel</button>
+                <button type="reset" class="close-module" id="close-new-item-form">Cancel</button>
                 <button type="button" id="add-item-btn">OK</button>
             </div>
         </form>
