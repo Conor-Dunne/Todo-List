@@ -1,12 +1,13 @@
 
 ## FINSHED 
 ~~Added delete function~~
-
+~~Add edit func~~
 
 
 
 
 ## To Do
-Add edit func
+
+
 Add view note 
 add "are you sure?" modals

@@ -1,8 +1,8 @@
 import "./styles.css";
 import displayFolders from "./foldersDom";
 import displayTodoList from "./itemsListDom";
-import { addToDoItem, editNote, deleteNote, addNewFolder, deleteFolder, showNewFolderModal, closeModal, showNewItemModal, closeNewItemModule, addToDoItemFromUserInput } from "./controls";
-import { hitEnterToSubmit, addGlobalEventListener } from "./helperFunctions";
+import { addToDoItem, editNote, deleteNote, addNewFolder, deleteFolder, showNewFolderModal, closeModal, showNewItemModal, closeNewItemModule, addToDoItemFromUserInput, editItemModal, submitEdit } from "./controls";
+import { hitEnterToSubmit, addGlobalEventListener, findObjInArrById } from "./helperFunctions";
 
 
 
@@ -20,17 +20,6 @@ if (Object.keys(folders).length === 0) {
 displayFolders(folders);
 displayTodoList(folders["Main"]);
 
-
-
-// addToDoItem("main", "Buy milk", "Go to store and buy milk", "today", "high");
-// addToDoItem("main", "Get milk in the shop to make pancakes", "Go to store and buy milk", "today", "high");
-// addToDoItem("main", "Buy bread", "Go to store and buy milk", "today", "high");
-// addToDoItem("main", "Buy cheese", "Go to store and buy milk", "today", "high");
-// addToDoItem("main", "Buy butter", "Go to store and buy milk", "today", "high");
-
-
-
-
 // =======================EVENT LISTENERSS=============================
 
 
@@ -39,6 +28,10 @@ addGlobalEventListener("click", ".folders", (el) => displayTodoList(folders[el.t
 
 addGlobalEventListener("click", ".delete", (e) => deleteNote(e.target.dataset.id));
 
+addGlobalEventListener("click", ".edit", (e) => editItemModal(e.target.dataset.id));
+
+const submitEditBtn = document.querySelector("#edit");
+submitEditBtn.addEventListener("click", (e) => submitEdit(e.target.dataset.id));
 
 //Open form for adding new folder
 const newFolderBtn = document.querySelector("#add-folder");

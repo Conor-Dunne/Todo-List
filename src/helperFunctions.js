@@ -1,4 +1,6 @@
 
+
+
 export function hitEnterToSubmit(e) {
   if (e.key === "Enter") {
     e.preventDefault();
@@ -27,5 +29,10 @@ export function removeAllChildNodes(parent) {
 
 export function getKeyByValue(object, value) {
   return Object.keys(object).find(key => object[key] === value);
+}
+
+export function findObjInArrById (arr, id) {
+  let index = arr.findIndex(obj => obj.id == id);
+  return arr[index];
 }
 
