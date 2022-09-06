@@ -9,13 +9,13 @@ import { hitEnterToSubmit, addGlobalEventListener, findObjInArrById } from "./he
 
 window.folders = {
 
-}
+};
 
 folders = JSON.parse(localStorage.getItem("folders"));
 
-if (Object.keys(folders).length === 0) {
+if (Object.keys(folders).length == 0) {
     folders["Main"] = [];
-}
+};
 
 displayFolders(folders);
 displayTodoList(folders["Main"]);
