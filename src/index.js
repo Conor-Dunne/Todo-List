@@ -16,15 +16,15 @@ folders = JSON.parse(localStorage.getItem("folders"));
 //     folders["Main"] = [];
 // };
 
-function isEmpty(object) {
-    for (const property in object) {
-      return false;
-    }
-    window.folders["Main"] = [];
-    return true;
-  };
+// function isEmpty(object) {
+//     for (const property in object) {
+//       return false;
+//     }
+//     window.folders["Main"] = [];
+//     return true;
+//   };
 
-isEmpty(folders);
+// isEmpty(folders);
 
 displayFolders(folders);
 displayTodoList(folders["Main"]);
