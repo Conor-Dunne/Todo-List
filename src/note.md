@@ -8,7 +8,7 @@
 
 ## To Do
 
-Add some css for god's sake!
+Add some css for god's sake! <----
 
 Add view note 
 add "are you sure?" modals
