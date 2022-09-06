@@ -63,5 +63,5 @@ const addFolderInput = document.querySelector("#new-folder");
 addFolderInput.addEventListener("keypress", hitEnterToSubmit)
 
 
-localStorage.setItem("folders", JSON.stringify(folders));
+// localStorage.setItem("folders", JSON.stringify(folders));
 
