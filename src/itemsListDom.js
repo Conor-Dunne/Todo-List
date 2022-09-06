@@ -11,7 +11,7 @@ function displayTodoList(folder) {
         return;
     }
 
-    const listContent = document.querySelector(".list-content");
+    // const listContent = document.querySelector(".list-content");
 
 
 
@@ -37,7 +37,7 @@ function displayTodoList(folder) {
 
         listItemRow.append(leftCol, rightCol);
 
-        listContent.appendChild(listItemRow);
+        list.appendChild(listItemRow);
 
     })
 
