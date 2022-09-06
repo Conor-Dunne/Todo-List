@@ -7,10 +7,13 @@ import { hitEnterToSubmit, addGlobalEventListener, findObjInArrById } from "./he
 
 
 window.folders = {
+ "Main": []   
 
-};
+}
 
-folders = JSON.parse(localStorage.getItem("folders"));
+// localStorage.clear();
+
+Object.assign(folders, JSON.parse(localStorage.getItem("folders")));
 
 // if (Object.keys(folders).length == 0) {
 //     folders["Main"] = [];
@@ -26,8 +29,12 @@ folders = JSON.parse(localStorage.getItem("folders"));
 
 // isEmpty(folders);
 
+
+
 displayFolders(folders);
 displayTodoList(folders["Main"]);
+
+
 
 // =======================EVENT LISTENERSS=============================
 
