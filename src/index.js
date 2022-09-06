@@ -11,24 +11,8 @@ window.folders = {
 
 }
 
-// localStorage.clear();
 
 Object.assign(folders, JSON.parse(localStorage.getItem("folders")));
-
-// if (Object.keys(folders).length == 0) {
-//     folders["Main"] = [];
-// };
-
-// function isEmpty(object) {
-//     for (const property in object) {
-//       return false;
-//     }
-//     window.folders["Main"] = [];
-//     return true;
-//   };
-
-// isEmpty(folders);
-
 
 
 displayFolders(folders);

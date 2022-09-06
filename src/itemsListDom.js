@@ -21,10 +21,9 @@ function displayTodoList(folder) {
         const listItemRow = createDomElements("div", "list-item", "");
 
         const leftCol = createDomElements("div", "left-col", "");
-        const checkBox = createDomElements("div", "checkbox", "0");
         const title = createDomElements("h2", "title", obj.title);
         const desc = createDomElements("p", "description", obj.details);
-        leftCol.append(checkBox, title, desc);
+        leftCol.append(title, desc);
 
         const rightCol = createDomElements("div", "right-col", "");
         // const viewBtn = createDomElements("button", "view-btn", "View");
