@@ -27,13 +27,13 @@ function displayTodoList(folder) {
         leftCol.append(checkBox, title, desc);
 
         const rightCol = createDomElements("div", "right-col", "");
-        const viewBtn = createDomElements("button", "view-btn", "View");
+        // const viewBtn = createDomElements("button", "view-btn", "View");
         const date = createDomElements("div", "date", obj.dueDate);
         const editBtn = createDomElements("button", "edit", "Edit");
         editBtn.dataset.id = obj.id;
         const deleteBtn = createDomElements("button", "delete", "Delete");
         deleteBtn.dataset.id = obj.id;
-        rightCol.append(viewBtn, date, editBtn, deleteBtn);
+        rightCol.append(date, editBtn, deleteBtn);
 
 
         listItemRow.append(leftCol, rightCol);
