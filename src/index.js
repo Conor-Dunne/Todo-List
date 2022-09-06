@@ -20,9 +20,9 @@ function isEmpty(object) {
     for (const property in object) {
       return false;
     }
-    folders["Main"] = [];
+    window.folders["Main"] = [];
     return true;
-  }
+  };
 
 isEmpty(folders);
 
