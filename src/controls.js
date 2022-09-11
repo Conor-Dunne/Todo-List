@@ -126,3 +126,24 @@ export function addNewFolder() {
 export function deleteFolder(folderName) {
     delete folders[folderName];
 }
+
+
+export function openMobileMenu() {
+    const menu = document.querySelector(".sidebar");
+    const overlay = document.querySelector(".menu-overlay");
+    
+    
+    menu.classList.add("sidebar-mobile")
+    overlay.style.display = "initial";
+
+}
+
+export function closeMobileMenu () {
+    const menu = document.querySelector(".sidebar");
+    const overlay = document.querySelector(".menu-overlay");
+
+    menu.classList.remove("sidebar-mobile")
+    menu.classList.add("sidebar");
+    overlay.style.display = "none";
+
+}

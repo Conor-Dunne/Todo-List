@@ -1,7 +1,7 @@
 import "./styles.css";
 import displayFolders from "./foldersDom";
 import displayTodoList from "./itemsListDom";
-import { addToDoItem, editNote, deleteNote, addNewFolder, deleteFolder, showNewFolderModal, closeModal, showNewItemModal, closeNewItemModule, addToDoItemFromUserInput, editItemModal, submitEdit } from "./controls";
+import { addToDoItem, editNote, deleteNote, addNewFolder, deleteFolder, showNewFolderModal, closeModal, showNewItemModal, closeNewItemModule, addToDoItemFromUserInput, editItemModal, submitEdit, openMobileMenu, closeMobileMenu } from "./controls";
 import { hitEnterToSubmit, addGlobalEventListener, findObjInArrById } from "./helperFunctions";
 
 
@@ -63,5 +63,8 @@ const addFolderInput = document.querySelector("#new-folder");
 addFolderInput.addEventListener("keypress", hitEnterToSubmit)
 
 
-// localStorage.setItem("folders", JSON.stringify(folders));
+const mobileMenu = document.querySelector(".mobile-menu-open-btn");
+mobileMenu.addEventListener("click", openMobileMenu );
 
+const closeMenu = document.querySelector(".close-mobile-menu-btn");
+closeMenu.addEventListener("click", closeMobileMenu)
