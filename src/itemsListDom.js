@@ -3,19 +3,27 @@ import { removeAllChildNodes, getKeyByValue } from "./helperFunctions";
 
 export let currentFolder = "Main";
 
+
 function displayTodoList(folder) {
+
+    const listFolderTitle = document.querySelector("#list-title");
     currentFolder = getKeyByValue(folders, folder);
+    listFolderTitle.textContent = currentFolder;
+
+    
+
+    
     const list = document.querySelector(".list-content");
     if (folder.length < 1) {
-        list.textContent = `${getKeyByValue(folders, folder)} is empty! Try adding some items.`
+        list.textContent = `${currentFolder} is empty! Try adding some items.`
         return;
     }
 
-    // const listContent = document.querySelector(".list-content");
-
-
+    
 
     removeAllChildNodes(list);
+
+
     folder.forEach(function (obj) {
 
         const listItemRow = createDomElements("div", "list-item", "");
