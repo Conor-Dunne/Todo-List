@@ -1,6 +1,3 @@
-
-
-
 export function hitEnterToSubmit(e) {
   if (e.key === "Enter") {
     e.preventDefault();
@@ -9,10 +6,10 @@ export function hitEnterToSubmit(e) {
 }
 
 export function addGlobalEventListener(type, selector, callback) {
-  document.addEventListener(type, e => {
-    if (e.target.matches(selector)) callback(e)
-  })
-};
+  document.addEventListener(type, (e) => {
+    if (e.target.matches(selector)) callback(e);
+  });
+}
 
 export function createDomElements(element, classlist, addText) {
   const el = document.createElement(`${element}`);
@@ -28,11 +25,10 @@ export function removeAllChildNodes(parent) {
 }
 
 export function getKeyByValue(object, value) {
-  return Object.keys(object).find(key => object[key] === value);
+  return Object.keys(object).find((key) => object[key] === value);
 }
 
-export function findObjInArrById (arr, id) {
-  let index = arr.findIndex(obj => obj.id == id);
+export function findObjInArrById(arr, id) {
+  let index = arr.findIndex((obj) => obj.id == id);
   return arr[index];
 }
-

@@ -1,32 +1,24 @@
-
-
-
-
 export default function displayFolders(obj) {
+  const list = document.querySelector(".folders-list");
+  const ul = document.createElement("ul");
+  ul.classList.add("click-item");
 
-    const list = document.querySelector(".folders-list");
-    const ul = document.createElement("ul");
-    ul.classList.add("click-item");
+  removeAllChildNodes(list);
 
-    removeAllChildNodes(list);
+  const folderNames = Object.keys(obj);
 
+  folderNames.forEach((name) => {
+    const li = document.createElement("li");
+    li.classList.add("folders");
+    li.textContent = name;
+    ul.append(li);
+  });
 
-     for (const property in obj) {
-        const li = document.createElement("li");
-        li.classList.add("folders")
-        li.textContent = property;
-        ul.append(li);
-    }
-
-    
-
-    list.appendChild(ul);
- 
-};
-
+  list.appendChild(ul);
+}
 
 function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
 }

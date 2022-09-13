@@ -1,68 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= htmlWebpackPlugin.options.title %></title>
-    <script src="https://kit.fontawesome.com/d9f592773a.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <script
+      src="https://kit.fontawesome.com/d9f592773a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <div class="container">
-        <header><div class="logo">To-Do HUB </div>
+      <header>
+        <div class="logo">To-Do HUB</div>
         <div class="mobile-menu-open-btn">
-            <i class="fa-solid fa-bars"></i>
-        </div></header>
-        <div class="sidebar">
-            <button type="button" id="add-folder">
-                + New folder
-            </button>
-            <h1>Folders</h1>
-            <div class="folders-list"></div>
+          <i class="fa-solid fa-bars"></i>
         </div>
-        <div class="menu-overlay"><button class="close-mobile-menu-btn">X</button></div>
-        <div class="main">
-            <div class="main-top">
-                <button type="button" id="add-item">
-                    + New item
-                </button>
-            </div>
-            <h1 id="list-title">ToDo list:</h1>
-            <div class="list-content">
-            </div>
+      </header>
+      <div class="sidebar">
+        <button type="button" id="add-folder">+ New folder</button>
+        <h1>Folders</h1>
+        <div class="folders-list"></div>
+      </div>
+      <div class="menu-overlay">
+        <button class="close-mobile-menu-btn">X</button>
+      </div>
+      <div class="main">
+        <div class="main-top">
+          <button type="button" id="add-item">+ New item</button>
         </div>
+        <h1 id="list-title">ToDo list:</h1>
+        <div class="list-content"></div>
+      </div>
     </div>
     <div class="hide-content" id="add-folder-module">
-        <form action="#" class="user-input">
-            <label for="new-folder">Folder Name: </label>
-            <input type="text" id="new-folder" name="folder-name" placeholder="Enter new folder name..." required>
-            <div class="form-controls">
-                <button type="reset" class="close-module">Cancel</button>
-                <button type="submit" id="add-folder-btn">OK</button>
-            </div>
-        </form>
+      <form action="#" class="user-input">
+        <label for="new-folder">Folder Name: </label>
+        <input
+          type="text"
+          id="new-folder"
+          name="folder-name"
+          placeholder="Enter new folder name..."
+          required
+        />
+        <div class="form-controls">
+          <button type="reset" class="close-module">Cancel</button>
+          <button type="submit" id="add-folder-btn">OK</button>
+        </div>
+      </form>
     </div>
     <div class="hide-content" id="add-item-module">
-        <form class="user-input">
-            <h1 id="add-item-h1">Add new ToDo item:</h1>
-            <label for="new-item-title">Title: </label>
-            <input type="text" id="new-item-title" name="title" placeholder="What do need to do?" required>
-            <label for="new-item-details">Details: </label>
-            <input type="text" id="new-item-details" name="details" placeholder="Any details?">
-            <label for="new-item-due-date">Due date: </label>
-            <input type="date" id="new-item-due-date" name="Due date">
-            <label for="new-item-priority">Priority: </label>
-            <select id="new-item-priority" name="priority">
-                <option value="high">High</option>
-                <option value="medium">Medium</option>
-                <option value="low">Low</option>
-            </select>
-            <div class="form-controls">
-                <button type="reset" class="close-module" id="close-new-item-form">Cancel</button>
-                <button type="submit" id="add-item-btn">OK</button>
-                <button type= "button" id="edit">Confirm edit</button>
-            </div>
-        </form>
+      <form class="user-input">
+        <h1 id="add-item-h1">Add new ToDo item:</h1>
+        <label for="new-item-title">Title: </label>
+        <input
+          type="text"
+          id="new-item-title"
+          name="title"
+          placeholder="What do need to do?"
+          required
+        />
+        <label for="new-item-details">Details: </label>
+        <input
+          type="text"
+          id="new-item-details"
+          name="details"
+          placeholder="Any details?"
+        />
+        <label for="new-item-due-date">Due date: </label>
+        <input type="date" id="new-item-due-date" name="Due date" />
+        <label for="new-item-priority">Priority: </label>
+        <select id="new-item-priority" name="priority">
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+        <div class="form-controls">
+          <button type="reset" class="close-module" id="close-new-item-form">
+            Cancel
+          </button>
+          <button type="submit" id="add-item-btn">OK</button>
+          <button type="button" id="edit">Confirm edit</button>
+        </div>
+      </form>
     </div>
-</body>
+  </body>
 </html>
